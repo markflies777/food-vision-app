@@ -3,5 +3,5 @@
 
 
 #### Name: Martin Lee
-#### intro : This Food computer vision app is using TensorFlow to classify images of food!! 
+#### Intro : This Food computer vision app is using TensorFlow to classify images of food!! 
 #### Link for web app : 
