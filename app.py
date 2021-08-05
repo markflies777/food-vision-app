@@ -1,7 +1,6 @@
 import tensorflow as tf
-import matplotlib.image as mpimg
+from PIL import Image
 import numpy as np
-import streamlit as st
 
 
 def load_model(filename):
@@ -10,7 +9,7 @@ def load_model(filename):
 
 
 def preprocessing_img(upload_image):
-    pic = mpimg.imread(upload_image)
+    pic = Image.open(upload_image).convert('RGB')
     resized_image = tf.image.resize(pic, [224, 224])
     return resized_image, pic
 
