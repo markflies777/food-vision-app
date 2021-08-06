@@ -106,15 +106,13 @@ class_names = ['apple_pie',
 
 def main():
     st.cache()
-    st.title('Food Prediction AI 🍉 🌮 🍝 🍪')
+    st.markdown("<h1 style='text-align: center'>Food Prediction AI 🍉 🌮 🍝 🍪</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: right'><i>By Martin Lee</i></p>", unsafe_allow_html=True)
     st.markdown("""---""")
     st.write("""
-    
     ## Food-Vision 101 ##
-    #### This machine can classify food into different categories! ###
-    
+    #### This machine can classify food into different categories! ####
     """)
-
     st.markdown("""---""")
 
     model = load_model('fine-tuned-food-vision101.h5')
@@ -122,10 +120,13 @@ def main():
     print(upload_image)
 
     if upload_image is not None:
+
         pic, top_5, top_5_prob = make_prediction(upload_image, model)
-        st.subheader(f"Predict: {class_names[top_5[0]]}, Probability: {top_5_prob[0]*100:.3f} %")
-        for i in range(1,5):
-            st.text(f"Predict: {class_names[top_5[i]]}, Probability: {top_5_prob[i]*100:.3f} %")
+        st.subheader(f"1. Predict: {class_names[top_5[0]].title()}, Probability: {top_5_prob[0]*100:.3f} %")
+        st.progress(int(top_5_prob[0]*100))
+        for i in range(1, 5):
+            st.text(f"{i+1}. Predict: {class_names[top_5[i]].title()}, Probability: {top_5_prob[i]*100:.3f} %")
+            st.progress(int(top_5_prob[i] * 100))
         st.image(pic)
 
 
