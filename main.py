@@ -105,7 +105,6 @@ class_names = ['apple_pie',
 
 
 def main():
-    st.cache()
     st.markdown("<h1 style='text-align: center'>Food Prediction AI 🌮 🍝 🍪</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: right'><i>By Martin Lee</i></p>", unsafe_allow_html=True)
     st.markdown("""---""")
