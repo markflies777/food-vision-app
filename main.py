@@ -131,6 +131,4 @@ def main():
 
 try:        
   main()
-except:
-  pyautogui.hotkey("ctrl","F5")
 
