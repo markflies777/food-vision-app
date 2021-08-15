@@ -1,5 +1,6 @@
 import streamlit as st
 from app import *
+import pyautogui
 
 class_names = ['apple_pie',
                'baby_back_ribs',
@@ -128,5 +129,8 @@ def main():
             st.progress(int(top_5_prob[i] * 100))
         st.image(pic)
 
+try:        
+  main()
+except:
+  pyautogui.hotkey("ctrl","F5")
 
-main()
