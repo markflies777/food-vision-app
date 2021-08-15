@@ -1,6 +1,5 @@
 import streamlit as st
 from app import *
-import pyautogui
 
 class_names = ['apple_pie',
                'baby_back_ribs',
