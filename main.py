@@ -129,6 +129,5 @@ def main():
             st.progress(int(top_5_prob[i] * 100))
         st.image(pic)
 
-try:        
-  main()
+main()
 
